@@ -1,9 +1,11 @@
 # Required to run your project under the correct environment.
 language: node_js
 
-# Versions of PHP you want your project run with.
+# Versions of Node you want your project run with.
 node_js:
   - 6.11
+  - 8.11.1
+  - 8.11.2
 
 # Commands to be run before your environment runs.
 before_script:

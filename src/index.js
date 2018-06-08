@@ -70,6 +70,11 @@ var IrkfdbClient = {
             return apiCall + 'categories' + '?' + http_build_query(queryParams);
         }
 
+        if((this.firstName).trim() !== '' && (this.lastName).trim() !== '') {
+            queryParams['firstName'] = this.firstName;
+            queryParams['lastName'] = this.lastName;
+        }
+
         if (this.isRandom == true) {
             apiCall += 'random';
         }

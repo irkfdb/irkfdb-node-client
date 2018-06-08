@@ -21,3 +21,15 @@ describe('testProperCategoryFact', function () {
         });
     });
 });
+describe('testCustomNameFact', function () {
+    it('checks if first & last name replacement is working', function(done) {
+        var firstName = 'Swapnil',
+        lastName = 'Sarwe';
+        irkfdb.setName(firstName, lastName).getRandomFact().then(function (data) {
+            var fact = data.resultSet.data[0].fact;
+            assert.equal(data.status, "OK");
+            assert.isTrue((fact.toLowerCase().indexOf(firstName.toLowerCase()) > -1) || (fact.toLowerCase().indexOf(lastName.toLowerCase()) > -1));
+            done();
+        })
+    })
+})
